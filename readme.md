@@ -3,6 +3,7 @@
 #### SETUP INFLUX-DB on Local Using Docker
 
 ```
+
 sudo docker run -p 8086:8086 -v myInfluxVolume:/var/lib/influxdb2 influxdb:latest
 
 ```
@@ -41,6 +42,7 @@ python3 app.py
 
 #### cURL:
 ```
+
 curl --location --request GET 'http://127.0.0.1:5000/data/api/bulk-data' \
 --header 'Content-Type: application/json'
 
