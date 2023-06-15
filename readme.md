@@ -1,19 +1,20 @@
-##INFLUXDB-PYTHON TASK
+# INFLUXDB-PYTHON TASK
 
-Creating a virtual environment:
+
+#### Creating a virtual environment:
 
 ```sh
 conda create -p venv --y
 
 ```
 
-Installing Required Dependencies:
+#### Installing Required Dependencies:
 
 ```sh
 pip3 install -r requirements.txt
 
 ```
-Add the Secrets to the Environment Variables
+#### Add the Secrets to the Environment Variables
 
 ```sh
 
@@ -21,22 +22,26 @@ export INFLUXDB_URL = http://localhost:8086
 export INFLUXDB_TOKEN = <TOKEN>
 
 ```
-Run the APP:
+#### Run the APP:
 
 ```sh
 
 python3 app.py
 
 ```
-Upload the attached CSV file 'air-sensor-data-annotated.csv' to the bucket 'bulk_data':
+#### Upload the attached CSV file **air-sensor-data-annotated.csv** to the bucket 'bulk_data':
 
-cURL:
+#### cURL:
+```
 curl --location --request GET 'http://127.0.0.1:5000/data/api/bulk-data' \
 --header 'Content-Type: application/json'
+```
 
 Sample Response:
 ```
 {
+    "error": false,
+    "message": "Data Fetched Successfully"
     "data": [
         {
             "_field": "co",
@@ -71,8 +76,6 @@ Sample Response:
             "sensor_id": "TLM0100",
             "table": 0
         }
-    ],
-    "error": false,
-    "message": "Data Fetched Successfully"
+    ]
 }
 ```
