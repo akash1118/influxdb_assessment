@@ -1,9 +1,16 @@
 # INFLUXDB-PYTHON TASK
 
+#### SETUP INFLUX-DB on Local Using Docker
+
+```
+sudo docker run -p 8086:8086 -v myInfluxVolume:/var/lib/influxdb2 influxdb:latest
+
+```
 
 #### Creating a virtual environment:
 
 ```sh
+
 conda create -p venv --y
 
 ```
@@ -11,6 +18,7 @@ conda create -p venv --y
 #### Installing Required Dependencies:
 
 ```sh
+
 pip3 install -r requirements.txt
 
 ```
@@ -18,7 +26,7 @@ pip3 install -r requirements.txt
 
 ```sh
 
-export INFLUXDB_URL = http://localhost:8086
+export INFLUXDB_URL = < DB URL >
 export INFLUXDB_TOKEN = <TOKEN>
 
 ```
@@ -35,10 +43,12 @@ python3 app.py
 ```
 curl --location --request GET 'http://127.0.0.1:5000/data/api/bulk-data' \
 --header 'Content-Type: application/json'
+
 ```
 
 Sample Response:
 ```
+
 {
     "error": false,
     "message": "Data Fetched Successfully"
@@ -78,4 +88,5 @@ Sample Response:
         }
     ]
 }
+
 ```
